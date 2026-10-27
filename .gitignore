@@ -1,0 +1,152 @@
+﻿# ================================
+# Python
+# ================================
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# ================================
+# 开发调试脚本（_开头 = 一次性脚本）
+# ================================
+_check*.py
+_fix*.py
+_fix*.b64
+_read_*.py
+_gen_*.py
+_dump_*.py
+_mysql_*.py
+_review_*.py
+_update_*.py
+_verify*.py
+_test_*.py
+_test_*.b64
+
+# ================================
+# 输出文件
+# ================================
+*.txt
+*.b64
+!requirements.txt
+
+# ================================
+# IDE / Editor
+# ================================
+.idea/
+*.iml
+*.xml
+.vscode/
+.history/
+
+# ================================
+# 版权研报 & 财报原文（不上传）
+# ================================
+data/研报总MD/
+data/附件2：财务报告/
+data/附件5：研报数据/
+
+# ================================
+# 提取结果JSON（1039个文件，太多）
+# ================================
+data/extracted/
+
+# ================================
+# 大型数据缓存（可重建）
+# ================================
+data/rag_index/
+data/chunks.json
+data/nodes.pkl
+data/faiss_index.bin
+data/mapping_history.json
+data/synonym_pool.json
+data/schema_columns.json.bak
+data/index_meta.json
+data/train_data.json
+
+# ================================
+# 模型训练文件（大文件 & 可重建）
+# ================================
+models/rag_index/
+*.bin
+*.pkl
+*.pt
+*.pth
+*.safetensors
+*.rar
+*.zip
+
+# ================================
+# 模型自动生成文档
+# ================================
+models/model1_schema_linking/output/README.md
+
+# ================================
+# 第三方依赖库
+# ================================
+pdf_extractor/lib/
+
+
+# ================================
+# 一次性调试脚本（无下划线前缀）
+# ================================
+check_*.py
+test_*.py
+verify_*.py
+debug_*.py
+reimport*.py
+analyze_failures*.py
+read_excel*.py
+fix_*.py
+run*batch*.py
+batch_process.py
+compare_data.py
+cleanup_tables.py
+create_core_table.py
+drop_tables.py
+patch_agent.py
+review_pending.py
+h
+results/
+backup_*.json
+data/schema_columns.json
+data/mapping_history.json
+
+# ================================
+# 系统 / 环境
+# ================================
+CACHEDIR.TAG
+.DS_Store
+Thumbs.db
+
+# ================================
+# 凭据（真实值不入库，模板见 config/config.example.yaml）
+# ================================
+config/config.yaml
+.env
+
+# ================================
+# 运行时日志 / 本地快照
+# ================================
+logs/
+data/logs/
+
+# ================================
+# 论文原文派生文本（体积 & 版权）
+# ================================
+paper_texts/
+pdf_texts/
+论文清单/
+
+# ================================
+# 个人论文材料（含学号姓名，公开仓库不入库）
+# ================================
+doc/开题报告-*
+
+# ================================
+# 办公文档 & 测试数据（不上传）
+# ================================
+*.docx
+*.xlsx
+*.csv

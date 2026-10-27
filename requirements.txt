@@ -1,0 +1,13 @@
+flask
+pyyaml
+mysql-connector-python
+pymysql
+pandas
+numpy
+matplotlib
+torch
+transformers
+seqeval
+faiss-cpu
+jieba
+requests

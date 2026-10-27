@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智能问数 - 上市公司财报分析平台</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app">
+    <!-- ==================== 左侧边栏 ==================== -->
+    <aside class="sidebar">
+        <!-- 标题栏 -->
+        <div class="sidebar-header">
+            <div class="logo-icon">问</div>
+            <div class="logo-text">
+                <h1>智能问数</h1>
+                <p>医药上市公司财报分析平台</p>
+            </div>
+        </div>
+
+        <!-- 快捷问题 -->
+        <div class="sidebar-section">
+            <h3 class="section-title">快捷问题</h3>
+            <div class="quick-questions">
+                <button class="qq-btn" onclick="ask('2025年Q3营收排名前五的中药企业')">
+                    <span class="qq-tag tag-rank">排名</span>
+                    <span class="qq-text">2025Q3营收前五</span>
+                </button>
+                <button class="qq-btn" onclick="ask('华润三九近三年利润总额变化趋势')">
+                    <span class="qq-tag tag-trend">趋势</span>
+                    <span class="qq-text">三年利润趋势</span>
+                </button>
+                <button class="qq-btn" onclick="ask('白云山与云南白药2024年盈利能力对比')">
+                    <span class="qq-tag tag-compare">对比</span>
+                    <span class="qq-text">盈利能力对比</span>
+                </button>
+                <button class="qq-btn" onclick="ask('中药行业研发投入现状分析')">
+                    <span class="qq-tag tag-analysis">分析</span>
+                    <span class="qq-text">研发投入分析</span>
+                </button>
+                <button class="qq-btn" onclick="ask('同仁堂资产负债率偏高的原因')">
+                    <span class="qq-tag tag-reason">归因</span>
+                    <span class="qq-text">负债率归因</span>
+                </button>
+                <button class="qq-btn" onclick="ask('金花股份2024年净利润')">
+                    <span class="qq-tag tag-filter">查询</span>
+                    <span class="qq-text">金花净利润</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 数据范围 - 2格结构 -->
+        <div class="sidebar-section">
+            <h3 class="section-title">数据范围</h3>
+            <div class="data-cards">
+                <div class="dc-card">
+                    <div class="dc-item">
+                        <span class="dc-num">70</span>
+                        <span class="dc-label">家医药上市公司</span>
+                    </div>
+                    <div class="dc-sep"></div>
+                    <div class="dc-item">
+                        <span class="dc-num">4+</span>
+                        <span class="dc-label">年报告数据</span>
+                    </div>
+                </div>
+                <div class="dc-card">
+                    <div class="dc-item">
+                        <span class="dc-num">4</span>
+                        <span class="dc-label">张财务报表</span>
+                    </div>
+                    <div class="dc-sep"></div>
+                    <div class="dc-item">
+                        <span class="dc-num" id="qaCount">0</span>
+                        <span class="dc-label">本轮问答</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ==================== 右侧主内容区 ==================== -->
+    <main class="main-area">
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <span class="status-dot"></span>
+                <span class="status-text">未连接</span>
+            </div>
+            <div class="nav-right">
+                <button class="nav-btn">清空</button>
+            </div>
+        </nav>
+
+        <!-- 内容区 -->
+        <div class="content-area" id="contentArea">
+            <!-- 默认首页 -->
+            <div class="welcome" id="welcomeScreen">
+                <div class="welcome-icon">T3</div>
+                <h2>智能问数助手</h2>
+                <p>基于上市公司财报数据，支持自然语言查询、趋势分析、多公司对比，以及结果归因溯源。</p>
+                <div class="welcome-btns">
+                    <button onclick="ask('2024年营收排名前十的中药企业')">营收排行</button>
+                    <button onclick="ask('华润三九近三年利润变化趋势')">盈利趋势</button>
+                    <button onclick="ask('资产负债率低于40%的中药企业有哪些')">财务健康</button>
+                    <button onclick="ask('中药行业平均研发费用率')">行业均值</button>
+                </div>
+            </div>
+
+            <!-- 对话区 -->
+            <div class="chat-area" id="chatArea" style="display:none">
+                <div class="chat-messages" id="chatMessages"></div>
+            </div>
+        </div>
+
+        <!-- 底部输入区 - 全宽 -->
+        <div class="input-area">
+            <div class="input-row">
+                <textarea id="questionInput" placeholder="请输入财报分析问题，支持多轮追问…" rows="1"></textarea>
+                <button class="send-btn" id="sendBtn" onclick="sendQuestion()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <p class="input-hint">Enter 发送 · Shift+Enter 换行</p>
+        </div>
+    </main>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
